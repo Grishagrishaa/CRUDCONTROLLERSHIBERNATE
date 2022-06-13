@@ -32,11 +32,8 @@ public class GroupServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
         PrintWriter writer = response.getWriter();
-        SimpleBeanPropertyFilter theFilter = SimpleBeanPropertyFilter.serializeAllExcept();
-        FilterProvider filters = new SimpleFilterProvider()
-                .addFilter("myFilter", theFilter);
 
-        writer.println(mapper.writer(filters).writeValueAsString(service.readAll()));
+        writer.println(mapper.writeValueAsString(service.readAll()));
 
     }
 

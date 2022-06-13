@@ -31,11 +31,9 @@ public class GroupsStudentsServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json; charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        SimpleBeanPropertyFilter theFilter = SimpleBeanPropertyFilter.serializeAllExcept();
-        FilterProvider filters = new SimpleFilterProvider()
-                .addFilter("myFilter", theFilter);
 
-        writer.println(mapper.writer(filters).writeValueAsString(service.readAll()));
+
+        writer.println(mapper.writeValueAsString(service.readAll()));
     }
 
     @Override
