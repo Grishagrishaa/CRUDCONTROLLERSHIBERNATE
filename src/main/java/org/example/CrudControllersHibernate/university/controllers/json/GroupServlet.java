@@ -2,9 +2,6 @@ package org.example.CrudControllersHibernate.university.controllers.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.ser.FilterProvider;
-import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
-import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import org.example.CrudControllersHibernate.university.dao.entity.Group;
 import org.example.CrudControllersHibernate.university.service.GroupsService;
 

@@ -1,19 +1,15 @@
 package org.example.CrudControllersHibernate.university.dao;
 
+import org.example.CrudControllersHibernate.university.api.IDao;
 import org.example.CrudControllersHibernate.university.service.HibernateUtil;
-import org.example.CrudControllersHibernate.university.service.ManagerFactory;
 import org.hibernate.Session;
 
 import javax.persistence.OptimisticLockException;
-import javax.persistence.PersistenceException;
 import java.util.List;
 
-public class HibernateDao {
+public class HibernateDao<T> implements IDao<T> {
     private static HibernateDao instance;
-    private final ManagerFactory factory;
-
     protected HibernateDao() {
-        this.factory = ManagerFactory.getInstance();
     }
 
     //save in database
@@ -30,7 +26,6 @@ public class HibernateDao {
             throw new IllegalArgumentException("NO SUCH OBJECT WITH PROVIDED ID WAS FOUND");
         }
         session.close();
-
 
     }
 

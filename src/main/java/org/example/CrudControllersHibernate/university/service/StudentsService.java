@@ -1,11 +1,12 @@
 package org.example.CrudControllersHibernate.university.service;
 
+import org.example.CrudControllersHibernate.university.api.IService;
 import org.example.CrudControllersHibernate.university.dao.HibernateDao;
 import org.example.CrudControllersHibernate.university.dao.entity.Student;
 
 import java.util.List;
 
-public class StudentsService {
+public class StudentsService implements IService<Student> {
     private static StudentsService instance;
     private HibernateDao dao;
 

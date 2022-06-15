@@ -1,11 +1,12 @@
 package org.example.CrudControllersHibernate.university.service;
 
+import org.example.CrudControllersHibernate.university.api.IService;
 import org.example.CrudControllersHibernate.university.dao.HibernateDao;
 import org.example.CrudControllersHibernate.university.dao.entity.Group;
 
 import java.util.List;
 
-public class GroupsStudentsService {
+public class GroupsStudentsService implements IService<Group> {
     private static GroupsStudentsService instance;
     private HibernateDao dao;
 
@@ -16,6 +17,11 @@ public class GroupsStudentsService {
 
     public List readAll(){
         return dao.read(Group.class);
+    }
+
+    @Override
+    public void create(Group object) {
+        //NO USES OF THE ISERVICE HERE
     }
 
 

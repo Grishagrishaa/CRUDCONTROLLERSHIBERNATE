@@ -14,7 +14,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "Group", schema = "belstu")
-@JsonFilter("myFilter")
 @JsonDeserialize(builder = Group.Builder.class)
 public class Group implements Serializable {
     private static final long serialVersionUID = 3L;

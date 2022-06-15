@@ -1,14 +1,15 @@
 package org.example.CrudControllersHibernate.university.service;
 
 
+import org.example.CrudControllersHibernate.university.api.IService;
 import org.example.CrudControllersHibernate.university.dao.HibernateDao;
 import org.example.CrudControllersHibernate.university.dao.entity.Group;
 
 import java.util.List;
 
-public class GroupsService {
+public class GroupsService implements IService<Group> {
     private static GroupsService instance;
-    private HibernateDao dao;
+    private final HibernateDao dao;
 
     private GroupsService() {
         this.dao = HibernateDao.getInstance();
